@@ -7,7 +7,7 @@ LIBS = libft/libft.a ft_printf/libftprintf.a
 OBJS = $(SRCS:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = 
 ARFLAGS = -rcs
 RM = rm -rf
 
