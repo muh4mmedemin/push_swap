@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 16:17:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/11 16:47:18 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/11 19:13:29 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 
 #include <stdio.h> // sil
 #include "libft/libft.h"
+#include "ft_printf/ft_printf.h"
 #include <stdlib.h>
-
-void check_arg(char **argv, int argc);
 
 typedef struct stack
 {
@@ -25,4 +24,11 @@ typedef struct stack
      int            index;
      struct stack	*next;
 }    t_stack;
+
+void check_arg(char **argv, int argc);
+void check_same(char **argv, int argc);
+void free_stack(t_stack *stack);
+int lst_size(t_stack *stack);
+void find_index(t_stack *stack, int argc);
+void ft_fill_stack(t_stack **a, int argc, char **argv, int checker);
 #endif

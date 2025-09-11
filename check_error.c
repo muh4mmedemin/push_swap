@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 16:35:08 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/11 17:06:22 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/11 18:55:29 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void check_arg(char **argv, int argc)
 {
-     argc--;
+     int tmpargc;
      int i;
-     i = 0;
+
+     tmpargc = argc;
      if (argc == 0 || argv[argc][0] == '\0')
      {
           printf("Error : Boşluk Olabilir veya Lütfen Argüman giriniz !!");
@@ -36,9 +37,31 @@ void check_arg(char **argv, int argc)
           }
           argc--;
      }
+     check_same(argv, tmpargc);
 }
 
 void check_same(char **argv, int argc)
 {
-     
+     int i;
+     int timer;
+     char *temp;
+     int s1;
+
+     timer = 1;
+     while(timer <= argc)
+     {
+          i = timer;
+          s1 = ft_atoi(argv[timer]);
+          while (i < argc)
+          {
+               i++;
+               if(ft_atoi(argv[i]) == s1)
+               {
+                    printf("Error : Aynı sayı giriş yaptınız, lütfen farklı sayılar giriniz !!");
+                    exit(1);
+               }
+          }
+          
+          timer++;
+     }
 }
