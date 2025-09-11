@@ -1,5 +1,5 @@
-NAME = pushswap.a
-SRCS = push_swap.c
+NAME = pushswap
+SRCS = push_swap.c check_error.c
 DIRLIBFT = libft
 DIRPRINTF = ft_printf
 LIBS = libft/libft.a ft_printf/libftprintf.a
