@@ -6,13 +6,13 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 17:39:46 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/11 19:19:18 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/12 00:43:02 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_fill_stack(t_stack **a, int argc, char **argv, int checker)
+void ft_fill_stack(t_stack **a, int argc, char **argv)
 {
      int size;
      int i;
@@ -24,17 +24,16 @@ void ft_fill_stack(t_stack **a, int argc, char **argv, int checker)
      while (argv[size] != NULL)
           size++;
      size--;
-     printf("%d\n", argc);
      while(size > 0)
      {
           temp->content=ft_atoi(argv[i]);
+          //printf("%s\n", argv[1]);
           if(size > 0)
           {
                temp->next=malloc(sizeof(t_stack));
           }
           temp = temp->next;
           i++;
-          argc--;
           size--;
      }
 }

@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 17:39:33 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/11 17:41:46 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/12 00:57:47 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int lst_size(t_stack *stack)
 {
      int size;
      size = 0;
-     while (stack->next != NULL)
+     while (stack != NULL)
      {
           stack = stack->next;
           size++;
@@ -55,4 +55,17 @@ void free_stack(t_stack *stack)
           free(stack);
           stack = tmp;
      }
+}
+
+void free_char_pp(char **ptr)
+{
+     int i;
+
+     i = 0;
+     while (ptr[i] != NULL)
+     {
+          free(ptr[i]);
+          i++;
+     }
+     free(ptr);
 }
