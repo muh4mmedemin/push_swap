@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:54:36 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/12 01:09:19 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/15 15:42:11 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,10 @@ int main(int argc, char *argv[])
 {
      t_stack *a;
      t_stack *tmp;
-     char **temp;
-     copy_temp(&temp, argv, argc);
      argc--;
-     check_arg(temp, argc);
-     if(argc != 0)
-     {
-          a = malloc(sizeof(t_stack));
-          ft_fill_stack(&a, argc, temp);
-     }
+     check_arg(argv, argc);
+     a = malloc(sizeof(t_stack));
+     ft_fill_stack(&a, argc, argv);
      find_index(a, argc);
      tmp = a;
      while(a->next != NULL)
@@ -32,8 +27,7 @@ int main(int argc, char *argv[])
           ft_printf("Sayı : %d İndex : %d\n", (int)a->content, (int)a->index);
           a = a->next;
      }
-     free(tmp);
-     free_char_pp(temp);
+     free_stack(tmp);
 }
 
 void copy_temp(char ***temp,  char **argv, int argc)
