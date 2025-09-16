@@ -1,5 +1,7 @@
 NAME = pushswap
-SRCS = push_swap.c check_error.c utils_for_stack.c stack_a.c modified_split.c
+SRCS = push_swap.c check_error.c utils_for_stack.c stack_a.c modified_split.c \
+		commands/sa.c commands/sb.c commands/ss.c
+
 DIRLIBFT = libft
 DIRPRINTF = ft_printf
 LIBS = libft/libft.a ft_printf/libftprintf.a

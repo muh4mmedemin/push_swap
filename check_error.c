@@ -6,13 +6,13 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 16:35:08 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/16 23:15:21 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/16 23:35:14 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void char_is_digit(char *s)
+static    void char_is_digit(char *s)
 {
      int i;
      i = 0;
@@ -35,25 +35,7 @@ void char_is_digit(char *s)
      }
 }
 
-void check_arg(char **argv, int argc)
-{
-     int tmpargc;
-
-     tmpargc = argc;
-     if (argc == 0 || argv[argc][0] == '\0')
-     {
-          printf("Error : Boşluk Olabilir veya Lütfen Argüman giriniz !!");
-          exit(1);
-     }
-     while(argc > 0)
-     {
-          char_is_digit(argv[argc]);
-          argc--;
-     }
-     check_same(argv, tmpargc);
-}
-
-void check_same(char **argv, int argc)
+static    void check_same(char **argv, int argc)
 {
      int i;
      int timer;
@@ -76,4 +58,22 @@ void check_same(char **argv, int argc)
           
           timer++;
      }
+}
+
+void check_arg(char **argv, int argc)
+{
+     int tmpargc;
+
+     tmpargc = argc;
+     if (argc == 0 || argv[argc][0] == '\0')
+     {
+          printf("Error : Boşluk Olabilir veya Lütfen Argüman giriniz !!");
+          exit(1);
+     }
+     while(argc > 0)
+     {
+          char_is_digit(argv[argc]);
+          argc--;
+     }
+     check_same(argv, tmpargc);
 }

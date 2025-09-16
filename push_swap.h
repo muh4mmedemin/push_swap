@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 16:17:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/16 22:48:16 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/16 23:27:35 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct stack
 }    t_stack;
 char **modifed_split(char *s, char sep, char **argv, int app_name_size);
 void check_arg(char **argv, int argc);
-void check_same(char **argv, int argc);
 void free_stack(t_stack *stack);
 void free_char_pp(char **ptr);
 int lst_size(t_stack *stack);

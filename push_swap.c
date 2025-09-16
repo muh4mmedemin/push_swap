@@ -6,11 +6,12 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:54:36 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/16 23:03:37 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/17 01:31:33 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "commands/command.h"
 
 int main(int argc, char *argv[])
 {
