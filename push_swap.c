@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:54:36 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/16 22:49:25 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/16 23:03:37 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int main(int argc, char *argv[])
           ft_printf("Sayı : %d İndex : %d\n", (int)a->content, (int)a->index);
           a = a->next;
      }
-     free_char_pp(argv);
+     if(size != 0)
+          free_char_pp(argv);
      free_stack(tmp);
 }
 

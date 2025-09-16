@@ -6,16 +6,38 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 16:35:08 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/16 22:46:52 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/16 23:15:21 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void char_is_digit(char *s)
+{
+     int i;
+     i = 0;
+     while (s[i] != '\0')
+     {
+          if (s[i] == '-')
+          {
+               if (s[i + 1] < '0' || s[i + 1] > '9')
+               {
+                    ft_printf("Yanlış argüman algılandı");
+                    exit(1);
+               }
+          }
+          else if ((s[i] < '0'|| s[i] > '9'))
+          {
+               ft_printf("Sayı dışında argüman algılandı");
+               exit(1);
+          }
+          i++;
+     }
+}
+
 void check_arg(char **argv, int argc)
 {
      int tmpargc;
-     int i;
 
      tmpargc = argc;
      if (argc == 0 || argv[argc][0] == '\0')
@@ -25,16 +47,7 @@ void check_arg(char **argv, int argc)
      }
      while(argc > 0)
      {
-          i = 0;
-          while(argv[argc][i])
-          {
-               if(!ft_isdigit(argv[argc][i]))
-               {
-                    printf("Error : Lütfen sadece sayı giriniz !!");
-                    exit(1);
-               }
-               i++;
-          }
+          char_is_digit(argv[argc]);
           argc--;
      }
      check_same(argv, tmpargc);
