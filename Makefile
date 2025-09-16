@@ -1,5 +1,5 @@
 NAME = pushswap
-SRCS = push_swap.c check_error.c utils_for_stack.c stack_a.c
+SRCS = push_swap.c check_error.c utils_for_stack.c stack_a.c modified_split.c
 DIRLIBFT = libft
 DIRPRINTF = ft_printf
 LIBS = libft/libft.a ft_printf/libftprintf.a
@@ -7,7 +7,7 @@ LIBS = libft/libft.a ft_printf/libftprintf.a
 OBJS = $(SRCS:.c=.o)
 
 CC = cc
-CFLAGS = 
+CFLAGS = -Wall -Wextra -Werror
 ARFLAGS = -rcs
 RM = rm -rf
 

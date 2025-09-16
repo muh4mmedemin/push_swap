@@ -6,45 +6,45 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 15:42:45 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/15 18:19:28 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/16 22:40:11 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	countword(char *s, char sep)
+static int	count_word(char *s, char sep)
 {
 	int	word;
 	int	i;
 
 	word = 0;
 	i = 0;
-     printf("sa\n");
-	while (s[i] != '\0')
+	while (s[i])
 	{
-          printf("sa\n");
-		if ((s[i + 1] == sep && s[i] != sep) || (s[i] == '\0'
+		if ((s[i + 1] == sep && s[i] != sep) || (s[i + 1] == '\0'
 				&& s[i] != sep))
-			word++;
+          {
+               word++;
+          }
 		i++;
 	}
 	return (word);
 }
 
-void fillprogname(char **argv, char **str)
+static void fillprogname(char *argv, char **str)
 {
      int b;
      
      b = 0;
-     while(argv[0][b] != '\0')
+     while(argv[b] != '\0')
      {
-          str[0][b] = argv[0][b];
+          str[0][b] = argv[b];
           b++;
      }
      str[0][b] = '\0';
 }
 
-void fill(char *s, char sep, char **str)
+static void fill(char *s, char sep, char **str)
 {
      int i;
      int b;
@@ -90,10 +90,10 @@ char **modifed_split(char *s, char sep, char **argv, int app_name_size)
      int b;
      b = 0;
      cursor = 0;
-     word_size = countword((char *)s, sep);
-     str = malloc(sizeof(char*) * (word_size + 2));
-     str[word_size + 1] = NULL;
-     while (b < word_size + 2)
+     word_size = count_word(s, sep) + 2;
+     str = malloc(sizeof(char*) * (word_size));
+     str[word_size - 1] = NULL;
+     while (b < word_size -1)
      {
           if(b == 0)
                str[b] = malloc(app_name_size + 1);
@@ -101,19 +101,21 @@ char **modifed_split(char *s, char sep, char **argv, int app_name_size)
                str[b] = malloc(chrsize(s, sep, &cursor) + 1);
           b++;
      }
-     fillprogname(argv, str);
-     fill(s, sep, str);
-     return str;
+    fillprogname(argv[0], str);
+    fill(s, sep, str); 
+    return str;
      
 }
 
-int main (int argc, char *argv[])
+/*int main (int argc, char *argv[])
 {
      int i = 0;
-     char **str = modifed_split((char*)argv[1], ' ', argv, ft_strlen(argv[0]));
-     while (str[i] != NULL)
+     char **str;
+     str = modifed_split(argv[1], ' ', argv, ft_strlen(argv[0]));
+     while(str[i] != NULL)
      {
           printf("%s\n", str[i]);
           i++;
      }
 }
+*/

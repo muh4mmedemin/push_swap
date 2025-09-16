@@ -6,13 +6,13 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 17:39:33 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/12 00:57:47 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/16 22:47:10 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void find_index(t_stack *stack, int argc)
+void find_index(t_stack *stack)
 {
      t_stack *tmp;
      t_stack *tmp2;

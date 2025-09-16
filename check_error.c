@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 16:35:08 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/15 15:32:31 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/16 22:46:52 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void check_same(char **argv, int argc)
 {
      int i;
      int timer;
-     char *temp;
      int s1;
 
      timer = 1;

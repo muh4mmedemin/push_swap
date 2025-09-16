@@ -6,13 +6,13 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 17:39:46 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/12 00:43:02 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/16 22:48:06 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_fill_stack(t_stack **a, int argc, char **argv)
+void ft_fill_stack(t_stack **a, char **argv)
 {
      int size;
      int i;
