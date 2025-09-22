@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss.c                                               :+:      :+:    :+:   */
+/*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/17 00:17:48 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/22 10:10:47 by muayna           ###   ########.fr       */
+/*   Created: 2025/09/22 11:09:29 by muayna            #+#    #+#             */
+/*   Updated: 2025/09/22 12:18:50 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "command.h"
-#include "../push_swap.h"
+#include "push_swap.h"
+#include "commands/command.h"
 
-void ss(t_stack **a, t_stack **b)
+void sort(t_stack **a, t_stack **b)
 {
-     sa(a);
-     sb(b);
+     t_stack *tmp;
+     t_stack *tmp2;
+     tmp2 = *b;
+     tmp = *a;
 }

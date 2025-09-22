@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 00:15:11 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/17 01:31:02 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/22 10:45:07 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ void sb(t_stack **b)
      tmp = tmptop->index;
      tmptop->index = tmpnext->index;
      tmpnext->index = tmp;
+     ft_printf("sb\n");
 }
