@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 17:39:33 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/16 22:47:10 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/23 14:48:17 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void find_index(t_stack *stack)
      int index;
      index = 0;
      tmp = stack;
-     while (tmp->next != NULL)
+     while (tmp != NULL)
      {
           tmp2 = stack;
           index = 0;

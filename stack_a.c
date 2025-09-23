@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 17:39:46 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/16 22:48:06 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/23 15:16:50 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void ft_fill_stack(t_stack **a, char **argv)
      int i;
      t_stack *temp;
      
+     *a = malloc(sizeof(t_stack));
      size = 0;
      i = 1;
      temp = *a;
@@ -28,10 +29,8 @@ void ft_fill_stack(t_stack **a, char **argv)
      {
           temp->content=ft_atoi(argv[i]);
           //printf("%s\n", argv[1]);
-          if(size > 0)
-          {
+          if(size > 1)
                temp->next=malloc(sizeof(t_stack));
-          }
           temp = temp->next;
           i++;
           size--;

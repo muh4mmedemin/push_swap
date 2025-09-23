@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   command.h                                          :+:      :+:    :+:   */
+/*   pb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 23:48:21 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/23 16:27:10 by muayna           ###   ########.fr       */
+/*   Created: 2025/09/23 13:00:06 by muayna            #+#    #+#             */
+/*   Updated: 2025/09/23 13:49:09 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COMMAND_H
-# define COMMAND_H
-
+#include "command.h"
 #include "../push_swap.h"
-void sb(t_stack **b);
-void sa(t_stack **a);
-void ss(t_stack **a, t_stack **b);
-void pb(t_stack **a, t_stack **b);
-void pa(t_stack **a, t_stack **b);
-void ra(t_stack **a);
-void rb(t_stack **b);
 
+void pb(t_stack **a, t_stack **b)
+{
+     t_stack *tmpa;
 
-#endif
+     tmpa = *a;
+     *a = (*a)->next;
+     tmpa->next = (*b);
+     *b = tmpa;
+}
