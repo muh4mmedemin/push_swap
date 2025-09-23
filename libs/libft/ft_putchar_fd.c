@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrb.c                                              :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 16:39:42 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/23 23:57:17 by muayna           ###   ########.fr       */
+/*   Created: 2025/06/11 15:49:26 by muayna            #+#    #+#             */
+/*   Updated: 2025/06/11 22:25:07 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "command.h"
+#include <unistd.h>
 
-
-void rrb(t_stack **b)
+void	ft_putchar_fd(int c, int fd)
 {
-     t_stack *last;
-     t_stack *l;
-     
-     l = *b;
-     last = *b;
-     while (last->next != NULL)
-          last = last->next;
-     while (l->next->next != NULL)
-          l = l->next;
-     last->next = *b;
-     l->next = NULL;
-     *b = last;
+	write(fd, &c, 1);
 }

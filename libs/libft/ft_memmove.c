@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrb.c                                              :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 16:39:42 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/23 23:57:17 by muayna           ###   ########.fr       */
+/*   Created: 2025/05/28 09:19:20 by muayna            #+#    #+#             */
+/*   Updated: 2025/06/16 15:49:15 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "command.h"
+#include "libft.h"
 
-
-void rrb(t_stack **b)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-     t_stack *last;
-     t_stack *l;
-     
-     l = *b;
-     last = *b;
-     while (last->next != NULL)
-          last = last->next;
-     while (l->next->next != NULL)
-          l = l->next;
-     last->next = *b;
-     l->next = NULL;
-     *b = last;
+	char	*source;
+	char	*destination;
+
+	source = (char *)src;
+	destination = (char *)dst;
+	if (source < destination)
+		while (len--)
+			destination[len] = source[len];
+	else
+		ft_memcpy(destination, source, len);
+	return (dst);
 }

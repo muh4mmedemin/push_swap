@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrb.c                                              :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 16:39:42 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/23 23:57:17 by muayna           ###   ########.fr       */
+/*   Created: 2025/05/28 13:38:21 by muayna            #+#    #+#             */
+/*   Updated: 2025/06/14 11:49:52 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "command.h"
+#include <string.h>
 
-
-void rrb(t_stack **b)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-     t_stack *last;
-     t_stack *l;
-     
-     l = *b;
-     last = *b;
-     while (last->next != NULL)
-          last = last->next;
-     while (l->next->next != NULL)
-          l = l->next;
-     last->next = *b;
-     l->next = NULL;
-     *b = last;
+	char	*source;
+	char	*destination;
+	size_t	i;
+
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	i = 0;
+	source = (char *)src;
+	destination = (char *)dest;
+	while (i < n)
+	{
+		destination[i] = source[i];
+		i++;
+	}
+	return (destination);
 }

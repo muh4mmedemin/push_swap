@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrb.c                                              :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 16:39:42 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/23 23:57:17 by muayna           ###   ########.fr       */
+/*   Created: 2025/05/31 12:36:21 by muayna            #+#    #+#             */
+/*   Updated: 2025/06/16 19:53:23 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "command.h"
+#include <stdlib.h>
 
-
-void rrb(t_stack **b)
+char	*ft_strdup(const char *s)
 {
-     t_stack *last;
-     t_stack *l;
-     
-     l = *b;
-     last = *b;
-     while (last->next != NULL)
-          last = last->next;
-     while (l->next->next != NULL)
-          l = l->next;
-     last->next = *b;
-     l->next = NULL;
-     *b = last;
+	int		srcsize;
+	char	*newstr;
+
+	srcsize = 0;
+	while (s[srcsize])
+		srcsize++;
+	newstr = malloc(srcsize + 1);
+	if (newstr == NULL)
+		return (NULL);
+	srcsize = 0;
+	while (s[srcsize])
+	{
+		newstr[srcsize] = s[srcsize];
+		srcsize++;
+	}
+	newstr[srcsize] = '\0';
+	return (newstr);
 }

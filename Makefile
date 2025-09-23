@@ -1,10 +1,10 @@
 NAME = pushswap
-SRCS = push_swap.c check_error.c utils_for_stack.c stack_a.c modified_split.c \
-		commands/sa.c commands/sb.c commands/ss.c commands/pb.c commands/pa.c commands/ra.c commands/rb.c commands/rra.c commands/rrb.c radix.c
+SRCS = src/main/push_swap.c src/parsing/check_error.c src/parsing/modified_split.c src/stack_operations/utils_for_stack.c src/stack_operations/stack_a.c src/algorithms/radix.c \
+		commands/sa.c commands/sb.c commands/ss.c commands/pb.c commands/pa.c commands/ra.c commands/rb.c commands/rra.c commands/rrb.c
 
-DIRLIBFT = libft
-DIRPRINTF = ft_printf
-LIBS = libft/libft.a ft_printf/libftprintf.a
+DIRLIBFT = libs/libft
+DIRPRINTF = libs/ft_printf
+LIBS = libs/libft/libft.a libs/ft_printf/libftprintf.a
 
 OBJS = $(SRCS:.c=.o)
 

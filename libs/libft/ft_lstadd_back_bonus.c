@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrb.c                                              :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 16:39:42 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/23 23:57:17 by muayna           ###   ########.fr       */
+/*   Created: 2025/06/19 11:07:46 by muayna            #+#    #+#             */
+/*   Updated: 2025/06/20 10:14:57 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "command.h"
+#include "libft.h"
 
-
-void rrb(t_stack **b)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-     t_stack *last;
-     t_stack *l;
-     
-     l = *b;
-     last = *b;
-     while (last->next != NULL)
-          last = last->next;
-     while (l->next->next != NULL)
-          l = l->next;
-     last->next = *b;
-     l->next = NULL;
-     *b = last;
+	t_list	*tmp;
+
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	tmp = *lst;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	tmp->next = new;
 }

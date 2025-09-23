@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrb.c                                              :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 16:39:42 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/23 23:57:17 by muayna           ###   ########.fr       */
+/*   Created: 2025/06/26 18:19:29 by muayna            #+#    #+#             */
+/*   Updated: 2025/06/26 18:20:36 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "command.h"
+#include "libft.h"
+#include <stdlib.h>
 
-
-void rrb(t_stack **b)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-     t_stack *last;
-     t_stack *l;
-     
-     l = *b;
-     last = *b;
-     while (last->next != NULL)
-          last = last->next;
-     while (l->next->next != NULL)
-          l = l->next;
-     last->next = *b;
-     l->next = NULL;
-     *b = last;
+	void	*res;
+
+	if (!nmemb || !size)
+		return (malloc(0));
+	res = malloc(nmemb * size);
+	if (!res)
+		return (NULL);
+	ft_bzero(res, nmemb * size);
+	return (res);
 }

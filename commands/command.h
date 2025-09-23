@@ -6,14 +6,15 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 23:48:21 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/23 16:39:30 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/23 23:53:39 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef COMMAND_H
 # define COMMAND_H
 
-#include "../push_swap.h"
+# include "../include/push_swap.h"
+
 void sb(t_stack **b);
 void sa(t_stack **a);
 void ss(t_stack **a, t_stack **b);

@@ -6,12 +6,11 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 13:00:06 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/23 13:49:09 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/23 23:56:46 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "command.h"
-#include "../push_swap.h"
 
 void pb(t_stack **a, t_stack **b)
 {
