@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   command.h                                          :+:      :+:    :+:   */
+/*   rra.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 23:48:21 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/23 16:39:30 by muayna           ###   ########.fr       */
+/*   Created: 2025/09/23 16:33:16 by muayna            #+#    #+#             */
+/*   Updated: 2025/09/23 16:39:24 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COMMAND_H
-# define COMMAND_H
-
+#include "command.h"
 #include "../push_swap.h"
-void sb(t_stack **b);
-void sa(t_stack **a);
-void ss(t_stack **a, t_stack **b);
-void pb(t_stack **a, t_stack **b);
-void pa(t_stack **a, t_stack **b);
-void ra(t_stack **a);
-void rb(t_stack **b);
-void rra(t_stack **a);
-void rrb(t_stack **b);
 
-
-#endif
+void rra(t_stack **a)
+{
+     t_stack *tmp;
+     t_stack *last;
+     t_stack *l;
+     
+     l = *a;
+     tmp = *a;
+     last = *a;
+     while (last->next != NULL)
+          last = last->next;
+     while (l->next->next != NULL)
+          l = l->next;
+     last->next = *a;
+     l->next = NULL;
+     *a = last;
+}
