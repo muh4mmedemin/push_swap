@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:54:36 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/23 23:52:14 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/26 11:53:14 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,6 @@ int main(int argc, char *argv[])
      check_arg(argv, argc);
      ft_fill_stack(&a, argv);
      find_index(a);
-     pb(&a, &b);
-     pb(&a, &b);
-     rrb(&b);
      tmp = a;
      tmpb = b;
      while(a != NULL)
