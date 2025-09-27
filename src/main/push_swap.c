@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:54:36 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/27 14:08:20 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/27 14:40:00 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
      check_arg(argv, argc);
      ft_fill_stack(&a, argv);
      find_index(a);
+     find_small_number(a);
      tmp = a;
      tmpb = b;
      while(a != NULL)

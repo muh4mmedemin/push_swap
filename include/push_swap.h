@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 16:17:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/27 14:07:50 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/27 14:39:49 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ int lst_size(t_stack *stack);
 void find_index(t_stack *stack);
 void copy_temp(char ***temp,  char **argv, int argc);
 void ft_fill_stack(t_stack **a, char **argv);
+void find_small_number(t_stack *stack);
 
 #endif
