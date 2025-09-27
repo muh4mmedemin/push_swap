@@ -6,14 +6,14 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 16:35:08 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/27 14:11:21 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/27 14:14:04 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 #include "../../commands/command.h"
 
-static    void char_is_digit(char *s)
+void char_is_digit(char *s)
 {
      int i;
      i = 0;
@@ -36,7 +36,7 @@ static    void char_is_digit(char *s)
      }
 }
 
-static    void check_same(char **argv, int argc)
+void check_same(char **argv, int argc)
 {
      int i;
      int timer;
