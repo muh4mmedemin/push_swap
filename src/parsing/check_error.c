@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 16:35:08 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/23 23:54:40 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/27 14:11:21 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ static    void char_is_digit(char *s)
           {
                if (s[i + 1] < '0' || s[i + 1] > '9')
                {
-                    ft_printf("Yanlış argüman algılandı");
+                    ft_printf("Yanlış argüman algılandı\n");
                     exit(1);
                }
           }
           else if ((s[i] < '0'|| s[i] > '9'))
           {
-               ft_printf("Sayı dışında argüman algılandı");
+               ft_printf("Sayı dışında argüman algılandı\n");
                exit(1);
           }
           i++;
@@ -52,7 +52,7 @@ static    void check_same(char **argv, int argc)
                i++;
                if(ft_atoi(argv[i]) == s1)
                {
-                    printf("Error : Aynı sayı giriş yaptınız, lütfen farklı sayılar giriniz !!");
+                    printf("Error : Aynı sayı giriş yaptınız, lütfen farklı sayılar giriniz !!\n");
                     exit(1);
                }
           }
@@ -68,7 +68,7 @@ void check_arg(char **argv, int argc)
      tmpargc = argc;
      if (argc == 0 || argv[argc][0] == '\0')
      {
-          printf("Error : Boşluk Olabilir veya Lütfen Argüman giriniz !!");
+          printf("Error : Boşluk Olabilir veya Lütfen Argüman giriniz !!\n");
           exit(1);
      }
      while(argc > 0)
@@ -77,4 +77,14 @@ void check_arg(char **argv, int argc)
           argc--;
      }
      check_same(argv, tmpargc);
+}
+
+void check_multiple_arg(int argc, char **argv)
+{
+     (void)argv;
+     if (argc > 2)
+     {
+          ft_printf("Lütfen iki argüman girmeyiniz\n");
+          exit(1);
+     }
 }

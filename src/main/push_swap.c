@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:54:36 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/26 11:53:14 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/27 14:08:20 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
      size = 0;
      if(ft_strchr(argv[1], ' '))
      {
+          check_multiple_arg(argc, argv);    
           argv = modifed_split(argv[1], ' ', argv, ft_strlen(argv[1]));
           while(argv[size] != NULL)
                size++;
