@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 14:29:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/28 15:37:37 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/28 19:41:10 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,42 +29,39 @@ t_stack  *find_small_number(t_stack *stack)
     return small;
     // ft_printf("EN KÜÇÜĞÜ : %d\n", small->content);
 }
-void create_path(t_stack *stack, t_stack **a)
+void create_path(t_stack *stack, t_stack **a, t_stack **b)
 {
     t_stack *temp;
     t_stack *small;
-    int     stack_size;
     int     small_location;
+    int     i;
+    int     root_size;
 
-    small_location = 0;
-    temp = stack;
-    stack_size = lst_size(stack);
-    small = find_small_number(stack);
-    while (temp != small)
+    root_size = lst_size(*a);
+    i = 0;
+    while (lst_size(*a) != 1)
     {
-        temp = temp->next;
-        small_location++;
-        // ft_printf("%d", small_location);
-    }
-    temp = stack;
-    if (small_location < stack_size / 2)
-    {
-        while(small_location > 0)
+        small_location = 0;
+        temp = *a;
+        small = find_small_number((*a));
+        while (temp != small)
         {
-            ra(a);
-            small_location--;
+            temp = temp->next;
+            small_location++;
         }
+        sort(lst_size(*a), small_location, a, b);
+        i++;
     }
-    else if (small_location >= stack_size / 2)
+    i = 0;
+    while (i < root_size - 1)
     {
-        small_location = stack_size - small_location;
-        while(small_location > 0)
-        {
-            rra(a);
-            small_location--;
-        }
+        pa(a, b);
+        ft_printf("pa\n");
+        i++;
     }
-    //ft_printf("%d", temp->content);
+    (void)stack;
+    /*if (lst_size(*a) > 1)
+        create_path(*a, a, b);*/
 }
 
 t_stack *copy_tstack(t_stack *stack)
@@ -87,3 +84,4 @@ t_stack *copy_tstack(t_stack *stack)
     }
     return head_new_stack;
 }
+

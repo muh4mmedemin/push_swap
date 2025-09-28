@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 16:17:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/28 15:17:35 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/28 20:33:36 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct stack
      int            index;
      struct stack	*next;
 }    t_stack;
-void sort(t_stack **a, t_stack **b);
 char **modifed_split(char *s, char sep, char **argv, int app_name_size);
 void check_arg(char **argv, int argc);
 void check_multiple_arg(int argc, char **argv);
@@ -35,7 +34,8 @@ void find_index(t_stack *stack);
 void copy_temp(char ***temp,  char **argv, int argc);
 void ft_fill_stack(t_stack **a, char **argv);
 t_stack  *find_small_number(t_stack *stack);
-void create_path(t_stack *stack, t_stack **a);
+void create_path(t_stack *stack, t_stack **a, t_stack **b);
+void sort(int stack_size, int small_location, t_stack **a, t_stack **b);
 t_stack *copy_tstack(t_stack *stack);
 
 #endif

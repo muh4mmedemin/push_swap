@@ -1,24 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix.c                                            :+:      :+:    :+:   */
+/*   muayna.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 11:09:29 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/23 23:55:43 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/28 19:48:27 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 #include "../../commands/command.h"
 
-void sort(t_stack **a, t_stack **b)
+void sort(int stack_size, int small_location, t_stack **a, t_stack **b)
 {
-     t_stack *tmp;
-     t_stack *tmp2;
-     tmp2 = *b;
-     tmp = *a;
-     (void)tmp2;
-     (void)tmp;
+    if (small_location < stack_size / 2)
+    {
+        while(small_location > 0)
+        {
+            ra(a);
+            ft_printf("ra\n");
+            small_location--;
+        }
+          pb(a, b);
+          ft_printf("pb\n");
+    }
+    else if (small_location >= stack_size / 2)
+    {
+        small_location = stack_size - small_location;
+        while(small_location > 0)
+        {
+            rra(a);
+            ft_printf("rra\n");
+            small_location--;
+        }
+          pb(a, b);
+          ft_printf("pb\n");
+    }
 }

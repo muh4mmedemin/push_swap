@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:54:36 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/28 15:17:42 by muayna           ###   ########.fr       */
+/*   Updated: 2025/09/28 19:41:24 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int main(int argc, char *argv[])
      ft_fill_stack(&a, argv);
      find_index(a);
      find_small_number(a);
-     create_path(a, &a);
+     create_path(a, &a, &b);
      // t_stack *test = copy_tstack(a);
      tmp = a;
      tmpb = b;
-     while(a != NULL)
+     /*while(a != NULL)
      {
           ft_printf("Sayı : %d İndex : %d\n", (int)a->content, (int)a->index);
           a = a->next;
@@ -50,8 +50,7 @@ int main(int argc, char *argv[])
      {
           ft_printf("Sayı : %d İndex : %d\n", (int)b->content, (int)b->index);
           b = b->next;
-     }
-     ft_printf("----------- TEST STACK --------\n");
+     }*/
      if(size != 0)
           free_char_pp(argv);
      free_stack(tmp);
