@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 14:29:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/02 01:40:55 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/02 02:05:31 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,7 @@ t_stack  *find_small_number(t_stack *stack)
         tmp = tmp->next;
     }
     return small;
-    // ft_printf("EN KÜÇÜĞÜ : %d\n", small->content);
 }
-//
-//
-//
-//
 
 t_stack  *find_big_number(t_stack *stack)
 {
@@ -101,12 +96,6 @@ int bit_calc(t_stack *big_node)
     return size;
 }
 
-//
-//
-//
-//
-//
-
 void create_path(t_stack *stack, t_stack **a, t_stack **b)
 {
     t_stack *temp;
@@ -138,8 +127,6 @@ void create_path(t_stack *stack, t_stack **a, t_stack **b)
         i++;
     }
     (void)stack;
-    /*if (lst_size(*a) > 1)
-        create_path(*a, a, b);*/
 }
 
 t_stack *copy_tstack(t_stack *stack)
