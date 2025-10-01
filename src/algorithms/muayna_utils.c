@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 14:29:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/28 19:41:10 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/02 01:40:55 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,84 @@ t_stack  *find_small_number(t_stack *stack)
     return small;
     // ft_printf("EN KÜÇÜĞÜ : %d\n", small->content);
 }
+//
+//
+//
+//
+
+t_stack  *find_big_number(t_stack *stack)
+{
+    t_stack *tmp;
+    t_stack *big;
+
+    big = stack;
+    tmp = stack; 
+    while (tmp != NULL)
+    {
+        if (tmp->index > big->index)
+            big = tmp;
+        tmp = tmp->next;
+    }
+    return big;
+}
+
+void radix(int stack_size, t_stack **a, t_stack **b)
+{
+    int bitsize;
+    int i;
+    int c;
+    int bit;
+    int bsize;
+
+    bit = 1;
+    c = 0;
+    i = 0;
+    bitsize = bit_calc(find_big_number(*a));
+    while (i < bitsize)
+    {
+        c = 0;
+        while (c < stack_size)
+        {
+            if (((*a)->index & bit) == 0)
+                pb(a, b);
+            else
+                ra(a);
+            c++;
+        }
+        c = 0;
+        bsize = lst_size(*b);
+        while (c < bsize)
+        {
+            pa(a, b);
+            c++;
+        }
+        bit = bit << 1;
+        i++;
+    }
+}
+
+int bit_calc(t_stack *big_node)
+{
+    int checker;
+    int size;
+
+    size = 31;
+    checker = 1073741824;
+
+    while ((big_node->index & checker) == 0)
+    {
+        checker = checker >> 1;
+        size--;
+    }
+    return size;
+}
+
+//
+//
+//
+//
+//
+
 void create_path(t_stack *stack, t_stack **a, t_stack **b)
 {
     t_stack *temp;

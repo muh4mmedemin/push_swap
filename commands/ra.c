@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 14:35:13 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/26 11:53:20 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/02 01:41:11 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ void ra(t_stack **a)
      *a = (*a)->next;
      last->next = tmp;
      tmp->next = NULL;
+     ft_printf("ra\n");
 }

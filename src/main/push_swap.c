@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:54:36 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/28 19:41:24 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/02 01:43:20 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ int main(int argc, char *argv[])
      check_arg(argv, argc);
      ft_fill_stack(&a, argv);
      find_index(a);
-     find_small_number(a);
-     create_path(a, &a, &b);
+     radix(lst_size(a), &a, &b);
      // t_stack *test = copy_tstack(a);
      tmp = a;
      tmpb = b;

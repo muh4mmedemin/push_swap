@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 16:17:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/28 20:33:36 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/02 01:00:07 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,12 @@ void find_index(t_stack *stack);
 void copy_temp(char ***temp,  char **argv, int argc);
 void ft_fill_stack(t_stack **a, char **argv);
 t_stack  *find_small_number(t_stack *stack);
+t_stack  *find_big_number(t_stack *stack);
 void create_path(t_stack *stack, t_stack **a, t_stack **b);
 void sort(int stack_size, int small_location, t_stack **a, t_stack **b);
 t_stack *copy_tstack(t_stack *stack);
+//
+void radix(int stack_size, t_stack **a, t_stack **b);
+int bit_calc(t_stack *big_node);
 
 #endif

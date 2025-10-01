@@ -1,4 +1,4 @@
-NAME = pushswap
+NAME = push_swap
 SRCS = src/main/push_swap.c src/parsing/check_error.c src/parsing/modified_split.c src/stack_operations/utils_for_stack.c src/stack_operations/stack_a.c src/algorithms/muayna.c \
 		commands/sa.c commands/sb.c commands/ss.c commands/pb.c commands/pa.c commands/ra.c commands/rb.c commands/rra.c commands/rrb.c \
 		src/algorithms/muayna_utils.c
