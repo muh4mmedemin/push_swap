@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 16:17:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/02 01:00:07 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/02 19:07:02 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct stack
      struct stack	*next;
 }    t_stack;
 char **modifed_split(char *s, char sep, char **argv, int app_name_size);
-void check_arg(char **argv, int argc);
+void check_arg(char **argv, int argc, int size);
 void check_multiple_arg(int argc, char **argv);
 void free_stack(t_stack *stack);
 void free_char_pp(char **ptr);
@@ -41,5 +41,4 @@ t_stack *copy_tstack(t_stack *stack);
 //
 void radix(int stack_size, t_stack **a, t_stack **b);
 int bit_calc(t_stack *big_node);
-
 #endif
