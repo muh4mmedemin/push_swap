@@ -1,42 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_a.c                                          :+:      :+:    :+:   */
+/*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/11 17:39:46 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/02 22:20:05 by muayna           ###   ########.fr       */
+/*   Created: 2025/10/02 21:42:11 by muayna            #+#    #+#             */
+/*   Updated: 2025/10/02 21:45:35 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../commands/command.h"
 #include "../../include/push_swap.h"
 
-void	ft_fill_stack(t_stack **a, char **argv)
+void	radix(int stack_size, t_stack **a, t_stack **b)
 {
-	int		size;
-	int		i;
-	t_stack	*temp;
+	int	bitsize;
+	int	i;
+	int	c;
+	int	bit;
+	int	bsize;
 
-	*a = malloc(sizeof(t_stack));
-	size = 0;
-	i = 1;
-	temp = *a;
-	while (argv[size] != NULL)
-		size++;
-	size--;
-	while (size > 0)
+	bit = 1;
+	c = 0;
+	i = 0;
+	bitsize = bit_calc(find_big_number(*a));
+	while (i < bitsize)
 	{
-		temp->content = ft_atoi(argv[i]);
-		if (size > 1)
+		c = 0;
+		while (c < stack_size)
 		{
-			temp->next = malloc(sizeof(t_stack));
-			temp = temp->next;
+			if (((*a)->index & bit) == 0)
+				pb(a, b);
+			else
+				ra(a);
+			c++;
 		}
-		else
-			temp->next = NULL;
+		c = 0;
+		bsize = lst_size(*b);
+		while (c < bsize)
+		{
+			pa(a, b);
+			c++;
+		}
+		bit = bit << 1;
 		i++;
-		size--;
 	}
 }

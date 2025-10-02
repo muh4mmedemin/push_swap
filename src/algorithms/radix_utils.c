@@ -1,42 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_a.c                                          :+:      :+:    :+:   */
+/*   radix_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/11 17:39:46 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/02 22:20:05 by muayna           ###   ########.fr       */
+/*   Created: 2025/10/02 21:43:03 by muayna            #+#    #+#             */
+/*   Updated: 2025/10/02 21:43:53 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../commands/command.h"
 #include "../../include/push_swap.h"
 
-void	ft_fill_stack(t_stack **a, char **argv)
+t_stack	*find_big_number(t_stack *stack)
 {
-	int		size;
-	int		i;
-	t_stack	*temp;
+	t_stack	*tmp;
+	t_stack	*big;
 
-	*a = malloc(sizeof(t_stack));
-	size = 0;
-	i = 1;
-	temp = *a;
-	while (argv[size] != NULL)
-		size++;
-	size--;
-	while (size > 0)
+	big = stack;
+	tmp = stack;
+	while (tmp != NULL)
 	{
-		temp->content = ft_atoi(argv[i]);
-		if (size > 1)
-		{
-			temp->next = malloc(sizeof(t_stack));
-			temp = temp->next;
-		}
-		else
-			temp->next = NULL;
-		i++;
+		if (tmp->index > big->index)
+			big = tmp;
+		tmp = tmp->next;
+	}
+	return (big);
+}
+
+int	bit_calc(t_stack *big_node)
+{
+	int	checker;
+	int	size;
+
+	size = 31;
+	checker = 1073741824;
+	while ((big_node->index & checker) == 0)
+	{
+		checker = checker >> 1;
 		size--;
 	}
+	return (size);
 }
