@@ -6,52 +6,52 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 14:29:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/02 18:16:32 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/02 21:38:51 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
 #include "../../commands/command.h"
+#include "../../include/push_swap.h"
 
-t_stack  *find_small_number(t_stack *stack)
+t_stack	*find_small_number(t_stack *stack)
 {
-	t_stack *tmp;
-	t_stack *small;
+	t_stack	*tmp;
+	t_stack	*small;
 
 	small = stack;
-	tmp = stack; 
+	tmp = stack;
 	while (tmp != NULL)
 	{
 		if (tmp->index < small->index)
 			small = tmp;
 		tmp = tmp->next;
 	}
-	return small;
+	return (small);
 }
 
-t_stack  *find_big_number(t_stack *stack)
+t_stack	*find_big_number(t_stack *stack)
 {
-	t_stack *tmp;
-	t_stack *big;
+	t_stack	*tmp;
+	t_stack	*big;
 
 	big = stack;
-	tmp = stack; 
+	tmp = stack;
 	while (tmp != NULL)
 	{
 		if (tmp->index > big->index)
 			big = tmp;
 		tmp = tmp->next;
 	}
-	return big;
+	return (big);
 }
 
-void radix(int stack_size, t_stack **a, t_stack **b)
+void	radix(int stack_size, t_stack **a, t_stack **b)
 {
-	int bitsize;
-	int i;
-	int c;
-	int bit;
-	int bsize;
+	int	bitsize;
+	int	i;
+	int	c;
+	int	bit;
+	int	bsize;
 
 	bit = 1;
 	c = 0;
@@ -80,29 +80,28 @@ void radix(int stack_size, t_stack **a, t_stack **b)
 	}
 }
 
-int bit_calc(t_stack *big_node)
+int	bit_calc(t_stack *big_node)
 {
-	int checker;
-	int size;
+	int	checker;
+	int	size;
 
 	size = 31;
 	checker = 1073741824;
-
 	while ((big_node->index & checker) == 0)
 	{
 		checker = checker >> 1;
 		size--;
 	}
-	return size;
+	return (size);
 }
 
-void create_path(t_stack *stack, t_stack **a, t_stack **b)
+void	create_path(t_stack *stack, t_stack **a, t_stack **b)
 {
-	t_stack *temp;
-	t_stack *small;
-	int     small_location;
-	int     i;
-	int     root_size;
+	t_stack	*temp;
+	t_stack	*small;
+	int		small_location;
+	int		i;
+	int		root_size;
 
 	root_size = lst_size(*a);
 	i = 0;
@@ -129,12 +128,12 @@ void create_path(t_stack *stack, t_stack **a, t_stack **b)
 	(void)stack;
 }
 
-t_stack *copy_tstack(t_stack *stack)
+t_stack	*copy_tstack(t_stack *stack)
 {
-	t_stack *temp;
-	t_stack *new_stack;
-	t_stack *head_new_stack;
-	
+	t_stack	*temp;
+	t_stack	*new_stack;
+	t_stack	*head_new_stack;
+
 	temp = stack;
 	new_stack = malloc(sizeof(t_stack));
 	head_new_stack = new_stack;
@@ -147,6 +146,5 @@ t_stack *copy_tstack(t_stack *stack)
 		new_stack = new_stack->next;
 		temp = temp->next;
 	}
-	return head_new_stack;
+	return (head_new_stack);
 }
-

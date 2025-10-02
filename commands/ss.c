@@ -6,15 +6,14 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 00:17:48 by muayna            #+#    #+#             */
-/*   Updated: 2025/09/23 23:56:39 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/02 21:37:32 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "command.h"
 
-
-void ss(t_stack **a, t_stack **b)
+void	ss(t_stack **a, t_stack **b)
 {
-     sa(a);
-     sb(b);
+	sa(a);
+	sb(b);
 }
