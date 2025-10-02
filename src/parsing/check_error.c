@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 16:35:08 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/03 00:35:22 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/03 00:39:13 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ static void	char_is_digit(char *s, int size, char **argv)
 	{
 		if (s[i] == '-')
 		{
-			if ((s[i + 1] < '0' || s[i + 1] > '9') || (s[i - 1] > '0' && s[i + 1] < '9'))
+			if ((s[i + 1] < '0' || s[i + 1] > '9')
+				|| (s[i - 1] > '0' && s[i + 1] < '9'))
 			{
 				ft_printf("Yanlış argüman algılandı\n");
 				if (size != 0)
