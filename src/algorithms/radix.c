@@ -6,12 +6,20 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:42:11 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/02 21:45:35 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/02 22:32:33 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../commands/command.h"
 #include "../../include/push_swap.h"
+
+void	radix_sort(int bit, t_stack **a, t_stack **b)
+{
+	if (((*a)->index & bit) == 0)
+		pb(a, b);
+	else
+		ra(a);
+}
 
 void	radix(int stack_size, t_stack **a, t_stack **b)
 {
@@ -22,7 +30,6 @@ void	radix(int stack_size, t_stack **a, t_stack **b)
 	int	bsize;
 
 	bit = 1;
-	c = 0;
 	i = 0;
 	bitsize = bit_calc(find_big_number(*a));
 	while (i < bitsize)
@@ -30,19 +37,13 @@ void	radix(int stack_size, t_stack **a, t_stack **b)
 		c = 0;
 		while (c < stack_size)
 		{
-			if (((*a)->index & bit) == 0)
-				pb(a, b);
-			else
-				ra(a);
+			radix_sort(bit, a, b);
 			c++;
 		}
 		c = 0;
 		bsize = lst_size(*b);
-		while (c < bsize)
-		{
+		while (c++ < bsize)
 			pa(a, b);
-			c++;
-		}
 		bit = bit << 1;
 		i++;
 	}
