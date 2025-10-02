@@ -6,12 +6,24 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 14:29:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/02 22:16:20 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/02 23:39:20 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../commands/command.h"
 #include "../../include/push_swap.h"
+
+void	stackb_to_stacka(int root_size, t_stack **a, t_stack **b)
+{
+	int	i;
+
+	i = 0;
+	while (i < root_size)
+	{
+		pa(a, b);
+		i++;
+	}
+}
 
 t_stack	*find_small_number(t_stack *stack)
 {
@@ -29,7 +41,7 @@ t_stack	*find_small_number(t_stack *stack)
 	return (small);
 }
 
-void	create_path(t_stack *stack, t_stack **a, t_stack **b)
+void	create_path(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;
 	t_stack	*small;
@@ -52,39 +64,5 @@ void	create_path(t_stack *stack, t_stack **a, t_stack **b)
 		sort(lst_size(*a), small_location, a, b);
 		i++;
 	}
-	i = 0;
-	while (i < root_size - 1)
-	{
-		pa(a, b);
-		ft_printf("pa\n");
-		i++;
-	}
-	(void)stack;
-}
-
-t_stack	*copy_tstack(t_stack *stack)
-{
-	t_stack	*temp;
-	t_stack	*new_stack;
-	t_stack	*head_new_stack;
-
-	temp = stack;
-	new_stack = malloc(sizeof(t_stack));
-	head_new_stack = new_stack;
-	while (temp != NULL)
-	{
-		new_stack->index = temp->index;
-		new_stack->content = temp->content;
-		if (temp->next != NULL)
-		{
-			new_stack->next = malloc(sizeof(t_stack));
-			new_stack = new_stack->next;
-		}
-		else
-		{
-			new_stack->next = NULL;
-		}
-		temp = temp->next;
-	}
-	return (head_new_stack);
+	stackb_to_stacka(root_size - 1, a, b);
 }

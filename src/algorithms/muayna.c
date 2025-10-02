@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 11:09:29 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/02 21:38:55 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/02 23:37:00 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,9 @@ void	sort(int stack_size, int small_location, t_stack **a, t_stack **b)
 		while (small_location > 0)
 		{
 			ra(a);
-			ft_printf("ra\n");
 			small_location--;
 		}
 		pb(a, b);
-		ft_printf("pb\n");
 	}
 	else if (small_location >= stack_size / 2)
 	{
@@ -32,10 +30,8 @@ void	sort(int stack_size, int small_location, t_stack **a, t_stack **b)
 		while (small_location > 0)
 		{
 			rra(a);
-			ft_printf("rra\n");
 			small_location--;
 		}
 		pb(a, b);
-		ft_printf("pb\n");
 	}
 }
