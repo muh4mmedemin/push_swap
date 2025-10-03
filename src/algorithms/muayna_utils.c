@@ -6,14 +6,14 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 14:29:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/02 23:39:20 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/03 08:14:08 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../commands/command.h"
 #include "../../include/push_swap.h"
 
-void	stackb_to_stacka(int root_size, t_stack **a, t_stack **b)
+static void	stackb_to_stacka(int root_size, t_stack **a, t_stack **b)
 {
 	int	i;
 

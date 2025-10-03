@@ -6,14 +6,14 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:42:11 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/02 22:32:33 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/03 08:13:30 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../commands/command.h"
 #include "../../include/push_swap.h"
 
-void	radix_sort(int bit, t_stack **a, t_stack **b)
+static void	radix_sort(int bit, t_stack **a, t_stack **b)
 {
 	if (((*a)->index & bit) == 0)
 		pb(a, b);

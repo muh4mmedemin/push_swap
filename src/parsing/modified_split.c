@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 15:42:45 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/02 21:39:51 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/03 08:12:50 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,18 +109,3 @@ char	**modifed_split(char *s, char sep, char **argv, int app_name_size)
 	fill(s, sep, str);
 	return (str);
 }
-
-/*int main (int argc, char *argv[])
-{
-	int	i;
-     char **str;
-
-     i = 0;
-     str = modifed_split(argv[1], ' ', argv, ft_strlen(argv[0]));
-     while(str[i] != NULL)
-     {
-          printf("%s\n", str[i]);
-          i++;
-     }
-}
-*/
