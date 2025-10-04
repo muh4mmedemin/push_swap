@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 16:17:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/02 22:41:38 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/04 16:25:13 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,5 @@ t_stack				*copy_tstack(t_stack *stack);
 //
 void				radix(int stack_size, t_stack **a, t_stack **b);
 int					bit_calc(t_stack *big_node);
+size_t	modified_strlen(const char *s);
 #endif
