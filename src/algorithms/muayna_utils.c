@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 14:29:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/04 20:50:03 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/04 22:06:16 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,5 +115,6 @@ void	create_path(t_stack **a, t_stack **b)
 		sort_five(a , b);
 		find_index(*a);
 	}
-	(void)b;
+	else if (size_stack >= 6)
+		radix(lst_size(*a), a, b);
 }

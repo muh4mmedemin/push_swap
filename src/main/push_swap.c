@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:54:36 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/04 17:11:01 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/04 21:53:11 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ int	main(int argc, char *argv[])
 	check_arg(argv, argc, size);
 	ft_fill_stack(&a, argv);
 	find_index(a);
-	create_path(&a, &b);
+	create_path(&a, &b, size);
 	free_all(a, b, argv, size);
 }
