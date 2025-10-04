@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:54:36 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/04 16:17:40 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/04 17:11:01 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,9 @@ int	main(int argc, char *argv[])
 		argc = size;
 	}
 	argc--;
-	//check_arg(argv, argc, size);
+	check_arg(argv, argc, size);
 	ft_fill_stack(&a, argv);
 	find_index(a);
-	if (lst_size(a) < 60)
-		create_path(&a, &b);
-	else
-		radix(lst_size(a), &a, &b);
+	create_path(&a, &b);
 	free_all(a, b, argv, size);
 }

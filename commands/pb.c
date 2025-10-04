@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 13:00:06 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/02 21:36:27 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/04 20:42:43 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	pb(t_stack **a, t_stack **b)
 	t_stack	*tmpa;
 
 	tmpa = *a;
+
+	if((*a) == NULL)
+		return ;
 	*a = (*a)->next;
 	tmpa->next = (*b);
 	*b = tmpa;
