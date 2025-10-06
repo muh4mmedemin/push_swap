@@ -16,13 +16,18 @@
 size_t	modified_strlen(const char *s)
 {
 	size_t	i;
+	size_t	size;
 
+	size = 0;
 	i = 0;
     while(s[i] == '0')
     {
         i++;
     }
 	while (s[i])
+	{
+		size++;
 		i++;
-	return (i);
+	}
+	return (size);
 }
