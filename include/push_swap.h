@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 16:17:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/04 22:00:23 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/07 14:27:45 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ void				radix(int stack_size, t_stack **a, t_stack **b);
 int					bit_calc(t_stack *big_node);
 size_t	modified_strlen(const char *s);
 t_stack	*find_big_number(t_stack *stack);
+void char_is_digit2(int size, char **argv);
 
 #endif

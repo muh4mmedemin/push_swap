@@ -20,14 +20,24 @@ size_t	modified_strlen(const char *s)
 
 	size = 0;
 	i = 0;
+	while(s[i] == '-' || s[i] == '+')
+		i++;
     while(s[i] == '0')
     {
-        i++;
-    }
+		i++;
+	}
 	while (s[i])
 	{
 		size++;
 		i++;
 	}
 	return (size);
+}
+
+void char_is_digit2(int size, char **argv)
+{
+	ft_printf("Error\n");
+	if (size != 0)
+		free_char_pp(argv);
+	exit(1);
 }
