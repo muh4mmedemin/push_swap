@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 16:35:08 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/07 14:27:35 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/07 19:58:33 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	char_is_digit(char *s, int size, char **argv)
 				exit(1);
 			}
 		}
-		else if (s[i] == '+')
+		else if (s[i] == '+' || (s[i] <= '0' || s[i] > '9'))
 		{
 			if ((s[i + 1] < '0' || s[i + 1] > '9')
 				|| (s[i - 1] > '0' && s[i + 1] < '9'))
