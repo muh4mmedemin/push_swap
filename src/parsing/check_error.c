@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 16:35:08 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/08 04:27:41 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/08 19:22:33 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ static void	char_is_digit(char *s, int size, char **argv)
 	i = 0;
 	while (s[i] != '\0')
 	{
+		if ((s[i] == '-' && s[i + 1] == '\0') || (s[i] == '+' && s[i + 1] == '\0'))
+			char_is_digit2(size, argv);
 		if (ft_isdigit(s[i]) || s[i] == '-' || s[i] == '+')
 		{
 			if (s[i] == '-' && i != 0)
