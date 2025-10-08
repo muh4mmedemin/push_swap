@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 14:29:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/04 22:06:16 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/08 04:26:59 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,27 @@ t_stack	*find_small_number(t_stack *stack)
 	}
 	return (small);
 }
+
 static int	is_stack_sorted(t_stack *stack)
 {
-	t_stack *tmp;
-	int i;
+	t_stack	*tmp;
+	int		i;
 
 	i = 0;
 	tmp = stack;
-	while(tmp->index == i && tmp->next != NULL)
+	while (tmp->index == i && tmp->next != NULL)
 	{
 		i++;
 		tmp = tmp->next;
 	}
 	if (tmp->next == NULL)
-		return 1;
-	return 0;
-
+		return (1);
+	return (0);
 }
 
-static void sort_tree(t_stack **a)
+static void	sort_tree(t_stack **a)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = *a;
 	if (is_stack_sorted(*a))
@@ -68,13 +68,13 @@ static void sort_tree(t_stack **a)
 	{
 		sa(a);
 		rra(a);
-	}	
+	}
 }
 
-static void sort_five(t_stack **a, t_stack **b)
+static void	sort_five(t_stack **a, t_stack **b)
 {
-	t_stack *tmpa;
-	int location_big_node;
+	t_stack	*tmpa;
+	int		location_big_node;
 
 	tmpa = *a;
 	while (lst_size(*a) != 3)
@@ -89,30 +89,29 @@ static void sort_five(t_stack **a, t_stack **b)
 			while (location_big_node-- != 1)
 				ra(a);
 		else
-			while(location_big_node++ != lst_size(*a) + 1)
+			while (location_big_node++ != lst_size(*a) + 1)
 				rra(a);
 		pb(a, b);
-		tmpa = *a;	
+		tmpa = *a;
 	}
 	find_index(*a);
 	sort_tree(a);
 	while ((*b) != NULL)
-		pa(a, b); 
+		pa(a, b);
 }
 
 void	create_path(t_stack **a, t_stack **b)
 {
-	int size_stack;
+	int	size_stack;
 
 	size_stack = lst_size(*a);
-	
 	if (is_stack_sorted(*a))
 		return ;
 	else if (size_stack < 4)
 		sort_tree(a);
 	else if (size_stack < 6)
 	{
-		sort_five(a , b);
+		sort_five(a, b);
 		find_index(*a);
 	}
 	else if (size_stack >= 6)

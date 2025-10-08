@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   check_error_utils.c                                :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+        
+	+:+     */
+/*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+      
+	+#+        */
+/*                                                +#+#+#+#+#+  
+	+#+           */
 /*   Created: 2025/10/04 16:23:26 by muayna            #+#    #+#             */
 /*   Updated: 2025/10/04 16:23:26 by muayna           ###   ########.fr       */
 /*                                                                            */
@@ -20,10 +23,10 @@ size_t	modified_strlen(const char *s)
 
 	size = 0;
 	i = 0;
-	while(s[i] == '-' || s[i] == '+')
+	while (s[i] == '-' || s[i] == '+')
 		i++;
-    while(s[i] == '0')
-    {
+	while (s[i] == '0')
+	{
 		i++;
 	}
 	while (s[i])
@@ -34,7 +37,7 @@ size_t	modified_strlen(const char *s)
 	return (size);
 }
 
-void char_is_digit2(int size, char **argv)
+void	char_is_digit2(int size, char **argv)
 {
 	ft_printf("Error\n");
 	if (size != 0)
