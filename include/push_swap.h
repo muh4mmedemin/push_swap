@@ -6,7 +6,7 @@
 /*   By: muayna <muayna@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 16:17:07 by muayna            #+#    #+#             */
-/*   Updated: 2025/10/08 04:27:16 by muayna           ###   ########.fr       */
+/*   Updated: 2025/10/10 11:37:12 by muayna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "../libs/ft_printf/ft_printf.h"
 # include "../libs/libft/libft.h"
-# include <stdio.h> // sil
 # include <stdlib.h>
 
 typedef struct stack
